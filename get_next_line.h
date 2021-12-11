@@ -6,7 +6,7 @@
 /*   By: lelhlami <lelhlami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 15:37:27 by lelhlami          #+#    #+#             */
-/*   Updated: 2021/12/11 14:46:52 by lelhlami         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:07:14 by lelhlami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
+#include <fcntl.h>
 
 #define BUFFER_SIZE 45
 
