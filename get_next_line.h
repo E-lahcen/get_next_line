@@ -6,7 +6,7 @@
 /*   By: lelhlami <lelhlami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 15:37:27 by lelhlami          #+#    #+#             */
-/*   Updated: 2021/12/10 15:14:08 by lelhlami         ###   ########.fr       */
+/*   Updated: 2021/12/11 14:46:52 by lelhlami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void	*ft_calloc(size_t count, size_t size);
-char	**ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
