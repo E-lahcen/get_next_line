@@ -6,7 +6,7 @@
 /*   By: lelhlami <lelhlami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 12:22:52 by lelhlami          #+#    #+#             */
-/*   Updated: 2021/12/12 17:06:05 by lelhlami         ###   ########.fr       */
+/*   Updated: 2021/12/12 19:49:01 by lelhlami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	*save_next_lines(char *save)
 		tmp = ft_strdup(save);
 		free(save);
 		save = ft_strdup(tmp + i + 1);
+		free(tmp);
 		return (save);
 	}
 	free(save);

@@ -6,7 +6,7 @@
 /*   By: lelhlami <lelhlami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:39:57 by lelhlami          #+#    #+#             */
-/*   Updated: 2021/12/12 16:22:00 by lelhlami         ###   ########.fr       */
+/*   Updated: 2021/12/12 21:38:48 by lelhlami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,18 @@ char	*ft_strdup(const char *s1)
 {
 	char	*str;
 	size_t	len;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	len = (size_t)ft_strlen(s1);
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return (0);
-	ft_memcpy(str, s1, len);
+	while (i < len)
+	{
+		str[i] = s1[i];
+		i++;
+	}
 	str[len] = '\0';
 	return (str);
 }
@@ -87,64 +91,31 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	unsigned char	*dst1;
-	unsigned char	*src1;
-
-	dst1 = (unsigned char *)dst;
-	src1 = (unsigned char *)src;
-	if (!src && !dst)
-		return (0);
-	if (dst1 > src1)
-	{
-		while (len)
-		{
-			*(dst1 + len - 1) = *(src1 + len - 1);
-			len--;
-		}
-		return (dst);
-	}
-	while (len--)
-		*dst1++ = *src1++;
-	return (dst);
-}
-
-void	*ft_memcpy(void	*dst, const void *src, size_t n)
-{
-	char		*dst1;
-	const char	*src1;
-
-	dst1 = (char *)dst;
-	src1 = (const char *)src;
-	if (!dst && !src)
-		return (0);
-	while (n--)
-	{
-		*dst1++ = *src1++;
-	}
-	return (dst);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	int		len1;
 	int		len2;
+	int		i;
+	int		j;
 
 	if (!s1 && !s2)
 		return (ft_strdup(""));
 	if (!s1)
 		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
+	i = -1;
+	j = 0;
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	str = (char *)malloc(len1 + len2 + 1);
 	if (!str)
 		return (0);
-	ft_memmove(str, s1, len1);
-	ft_memmove(str + len1, s2, len2);
+	while (++i < len1)
+		str[j++] = s1[i];
+	i = -1;
+	while (++i < len2)
+		str[j++] = s2[i];
 	str[len1 + len2] = '\0';
+	free((void *)s1);
 	return (str);
 }

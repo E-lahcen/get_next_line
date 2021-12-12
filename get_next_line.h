@@ -6,7 +6,7 @@
 /*   By: lelhlami <lelhlami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 15:37:27 by lelhlami          #+#    #+#             */
-/*   Updated: 2021/12/12 16:08:23 by lelhlami         ###   ########.fr       */
+/*   Updated: 2021/12/12 18:37:08 by lelhlami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
-void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
 
 #endif
